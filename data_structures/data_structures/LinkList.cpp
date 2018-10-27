@@ -174,6 +174,34 @@ void LinkList::AddAfter(Node** root, int toBeAdded, int toCompare)
 	}
 }
 
+void LinkList::ReverseList(Node** root)
+{
+	if (!(*root)) //0 elements
+		return;
+
+	if (!(*root)->next) //1 element
+		return;
+
+	Node* current = (*root);
+	Node* prevNode = nullptr;
+	Node* nextNode = nullptr;
+
+	while (current)
+	{
+		//store next
+		nextNode = current->next;
+
+		//Reverse current note next ptr
+		current->next = prevNode;
+
+		//move one position ahead
+		prevNode = current;
+		current = nextNode;
+	}
+
+	(*root) = prevNode;
+}
+
 void LinkList::PrintList(Node* root)
 {
 	if (!root)

@@ -33,6 +33,9 @@
     <ClCompile Include="DoubleLinkList.cpp">
       <Filter>structures\lists</Filter>
     </ClCompile>
+    <ClCompile Include="ListPractice.cpp">
+      <Filter>structures\lists</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -48,6 +51,9 @@
       <Filter>structures\lists</Filter>
     </ClInclude>
     <ClInclude Include="Queue.h">
+      <Filter>structures\lists</Filter>
+    </ClInclude>
+    <ClInclude Include="ListPractice.h">
       <Filter>structures\lists</Filter>
     </ClInclude>
   </ItemGroup>

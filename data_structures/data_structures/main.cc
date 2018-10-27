@@ -4,6 +4,7 @@
 #include "DoubleLinkList.h"
 #include "Stack.h"
 #include "Queue.h"
+#include "ListPractice.h"
 
 
 
@@ -20,8 +21,10 @@ void main()
 	//TestArray();
 	//TestLinkList();
 	//TestDoubleLinkList();
-	TestStack();
-	TestQueue();
+	//TestStack();
+	//TestQueue();
+
+	ListPractice::Test();
 }
 
 
@@ -88,6 +91,10 @@ void TestLinkList()
 	LinkList::PrintList(list);
 
 	LinkList::AddAfter(&list, 11, 10);
+	LinkList::PrintList(list);
+
+	std::cout << "Reverse List" << std::endl;
+	LinkList::ReverseList(&list);
 	LinkList::PrintList(list);
 }
 

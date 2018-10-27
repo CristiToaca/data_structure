@@ -23,6 +23,8 @@ namespace data_structure
 		void AddBefore(Node** root, int toBeAdded, int toCompare);
 		void AddAfter(Node** root, int toBeAdded, int toCompare);
 
+		void ReverseList(Node** root);
+
 		void PrintList(Node* root);
 	}
 }

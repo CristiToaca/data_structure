@@ -78,12 +78,14 @@
   <ItemGroup>
     <ClCompile Include="DoubleLinkList.cpp" />
     <ClCompile Include="LinkList.cpp" />
+    <ClCompile Include="ListPractice.cpp" />
     <ClCompile Include="main.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DoubleLinkList.h" />
     <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="LinkList.h" />
+    <ClInclude Include="ListPractice.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>
