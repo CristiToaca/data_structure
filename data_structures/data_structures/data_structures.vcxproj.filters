@@ -44,5 +44,11 @@
     <ClInclude Include="DoubleLinkList.h">
       <Filter>structures\lists</Filter>
     </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>structures\lists</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>structures\lists</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

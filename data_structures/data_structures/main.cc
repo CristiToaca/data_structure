@@ -2,6 +2,8 @@
 #include "DynamicArray.h"
 #include "LinkList.h"
 #include "DoubleLinkList.h"
+#include "Stack.h"
+#include "Queue.h"
 
 
 
@@ -10,12 +12,16 @@ using namespace ct::data_structure;
 void TestArray();
 void TestLinkList();
 void TestDoubleLinkList();
+void TestStack();
+void TestQueue();
 
 void main()
 {
 	//TestArray();
 	//TestLinkList();
-	TestDoubleLinkList();
+	//TestDoubleLinkList();
+	TestStack();
+	TestQueue();
 }
 
 
@@ -137,4 +143,51 @@ void TestDoubleLinkList()
 	list.AddBefore(12, 5);
 	list.PrintList();
 
+}
+
+void TestStack()
+{
+	std::cout << "Test Stack!" << std::endl;
+
+	Stack<int> stack;
+	std::cout << "Empty ? " << (stack.Empty() ? "Yes" : "No") << std::endl;
+
+	std::cout << "Top Stack: ";
+	for (int i = 0; i < 10; ++i)
+	{
+		stack.Push(i);
+		std::cout << stack.Top() << " ";
+	}
+	std::cout << std::endl;
+	std::cout << "Empty ? " << (stack.Empty() ? "Yes" : "No") << std::endl;
+
+	std::cout << "Pop Stack: ";
+	while (!stack.Empty())
+	{
+		std::cout << stack.Pop() << " ";
+	}
+	std::cout << std::endl;
+}
+
+void TestQueue()
+{
+	std::cout << "Test Queue!" << std::endl;
+	Queue<int> queue;
+	std::cout << "Empty ? " << (queue.Empty() ? "Yes" : "No") << std::endl;
+
+	std::cout << "Enqueue: ";
+	for (int i = 0; i < 10; ++i)
+	{
+		queue.Enqueue(i);
+		std::cout << i << " ";
+	}
+	std::cout << std::endl;
+	std::cout << "Empty ? " << (queue.Empty() ? "Yes" : "No") << std::endl;
+
+	std::cout << "Dequeue: ";
+	while (!queue.Empty())
+	{
+		std::cout << queue.Dequeue() << " ";
+	}
+	std::cout << std::endl;
 }
