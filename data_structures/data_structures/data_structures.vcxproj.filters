@@ -19,15 +19,30 @@
     <Filter Include="structures\array">
       <UniqueIdentifier>{41f9ba2d-78de-418d-8f71-fa3b3abd7f3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="structures\lists">
+      <UniqueIdentifier>{88e8649c-3af7-4759-9ead-2d526a7e5020}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LinkList.cpp">
+      <Filter>structures\lists</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleLinkList.cpp">
+      <Filter>structures\lists</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
       <Filter>structures\array</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkList.h">
+      <Filter>structures\lists</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleLinkList.h">
+      <Filter>structures\lists</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
