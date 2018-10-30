@@ -1,4 +1,5 @@
 #include "ListPractice.h"
+#include <iostream>
 
 using namespace ct::data_structure;
 
@@ -25,22 +26,39 @@ void ListPractice::Test()
 //////////////////////////////////////////////////////////
 
 
-	LinkList::Node* first = nullptr;
-	LinkList::PushBack(&first, 7);
-	LinkList::PushBack(&first, 5);
-	LinkList::PushBack(&first, 9);
-	LinkList::PushBack(&first, 4);
-	LinkList::PushBack(&first, 6);
-	
-	LinkList::Node* second = nullptr;
-	LinkList::PushBack(&second, 8);
-	LinkList::PushBack(&second, 4);
-	//LinkList::PushBack(&second, 2);
-	
-	LinkList::Node* result = AddTwoNumbersRepresentedByLists(&second, &first);
-	LinkList::PrintList(first);
-	LinkList::PrintList(second);
-	LinkList::PrintList(result);
+	//LinkList::Node* first = nullptr;
+	//LinkList::PushBack(&first, 7);
+	//LinkList::PushBack(&first, 5);
+	//LinkList::PushBack(&first, 9);
+	//LinkList::PushBack(&first, 4);
+	//LinkList::PushBack(&first, 6);
+	//
+	//LinkList::Node* second = nullptr;
+	//LinkList::PushBack(&second, 8);
+	//LinkList::PushBack(&second, 4);
+	////LinkList::PushBack(&second, 2);
+	//
+	//LinkList::Node* result = AddTwoNumbersRepresentedByLists(&second, &first);
+	//LinkList::PrintList(first);
+	//LinkList::PrintList(second);
+	//LinkList::PrintList(result);
+
+
+	LinkList::Node* list = nullptr;
+	LinkList::PushBack(&list, 1);
+	LinkList::PushBack(&list, 2);
+	LinkList::PushBack(&list, 3);
+	LinkList::PushBack(&list, 4);
+	LinkList::PushBack(&list, 5);
+	auto endOfList = LinkList::TopNodeBack(list);
+	endOfList->next = list;
+	bool isLoop = DetectLoopInALinkedList(list);
+	std::cout << "isLoop ? "<< (isLoop ? "yes" : "no") << std::endl;
+
+	RemoveLoopInALinkedList(list);
+
+	isLoop = DetectLoopInALinkedList(list);
+	std::cout << "isLoop ? " << (isLoop ? "yes" : "no") << std::endl;
 }
 
 void ListPractice::SegregateEvenAndOddNodesInALinkedList(LinkList::Node** root)
@@ -183,7 +201,51 @@ LinkList::Node* ListPractice::AddTwoNumbersRepresentedByLists(LinkList::Node** f
 	return result;
 }
 
-void ListPractice::SortListOfZeroesOnesAndTwos(LinkList::Node** root)
+bool ListPractice::DetectLoopInALinkedList(LinkList::Node* root)
 {
+	if (!root || !root->next || !root->next->next) //0, 1 or 2 elements
+		return false;
 
+	LinkList::Node* current = root->next;
+	LinkList::Node* fastCurrent = root->next->next;
+	while (current && fastCurrent && fastCurrent->next)
+	{
+		if (current->data == fastCurrent->data)
+		{
+			return true;
+		}
+
+		current = current->next;
+		fastCurrent = fastCurrent->next->next;
+	}
+	return false;
+}
+
+void ListPractice::RemoveLoopInALinkedList(LinkList::Node* root)
+{
+	if (!root || !root->next || !root->next->next) //0, 1 or 2 elements
+		return;
+
+	LinkList::Node* current = root->next;
+	LinkList::Node* fastCurrent = root->next->next;
+	while (current && fastCurrent && fastCurrent->next && fastCurrent->next->next)
+	{
+		if (current->next->data == fastCurrent->next->next->data)
+		{
+			LinkList::Node* fromTheStart = root;
+			
+			while (current->next->data != fromTheStart->data)
+			{
+				current = current->next;
+				fromTheStart = fromTheStart->next;
+			}
+
+			current->next = nullptr;
+
+			return;
+		}
+
+		current = current->next;
+		fastCurrent = fastCurrent->next->next;
+	}
 }

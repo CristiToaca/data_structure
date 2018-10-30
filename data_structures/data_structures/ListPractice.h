@@ -27,7 +27,8 @@ namespace ListPractice
 	//Resultant list : 3->1->6  // represents number 613
 	LinkList::Node* AddTwoNumbersRepresentedByLists(LinkList::Node** first, LinkList::Node** second);
 
-	void SortListOfZeroesOnesAndTwos(LinkList::Node** root);
+	bool DetectLoopInALinkedList(LinkList::Node* root);
+	void RemoveLoopInALinkedList(LinkList::Node* root);
 
 }//namespace ListPractice
 }//namespace data_structure

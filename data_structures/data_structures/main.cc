@@ -1,10 +1,12 @@
 #include <iostream>
+#include <conio.h>
 #include "DynamicArray.h"
 #include "LinkList.h"
 #include "DoubleLinkList.h"
 #include "Stack.h"
 #include "Queue.h"
 #include "ListPractice.h"
+#include "StringPractice.h"
 
 
 
@@ -24,7 +26,83 @@ void main()
 	//TestStack();
 	//TestQueue();
 
-	ListPractice::Test();
+	//ListPractice::Test();
+
+	//bool test = StringPractice::CheckPermutation("String Builder", "BuilderString "); 
+	//std::cout << (test ? "True" : "False") << std::endl;
+
+	//std::string test = "Mr John Smith    ";
+	//StringPractice::URLify(test, 13);
+
+	//bool test = StringPractice::PalindromePermutation("aaaaaaabbbbbbbcbbbaaaaaaaaabaaaaaaaaaa");
+	//std::cout << (test ? "True" : "False") << std::endl;
+
+	//bool test = StringPractice::OneAway("pale", "ple");
+	//std::cout << (test ? "True" : "False") << std::endl;
+	//test = StringPractice::OneAway("pales", "pale");
+	//std::cout << (test ? "True" : "False") << std::endl;
+	//test = StringPractice::OneAway("pale", "bale");
+	//std::cout << (test ? "True" : "False") << std::endl;
+	//test = StringPractice::OneAway("pale", "bake");
+	//std::cout << (test ? "True" : "False") << std::endl;
+
+	//std::string test = StringPractice::StringCompression("aabcccccaaa");
+	//std::cout << "aabcccccaaa -> " << test << std::endl;
+
+
+
+	//std::vector<std::vector<bool>> matrix;
+	//matrix.push_back({ 1, 1, 1, 1, 1 });
+	//matrix.push_back({ 0, 0, 0, 0, 0 });
+	//matrix.push_back({ 1, 1, 1, 1, 1 });
+	//matrix.push_back({ 0, 0, 0, 0, 0 });
+	//matrix.push_back({ 1, 1, 1, 1, 1 });
+
+	//StringPractice::PrintMatrix(matrix);
+	//StringPractice::RotateMatrix(matrix);
+	//StringPractice::PrintMatrix(matrix);
+
+
+	auto gameMap = StringPractice::StartGame1024();
+	StringPractice::Print1024Matrix(gameMap);
+
+	//gameMap = { {4, 2, 16, 2}, \
+	//			{16, 64, 8, 4}, \
+	//			{4, 2, 32, 16}, \
+	//			{0, 32, 4, 2} };
+
+	//StringPractice::MoveLeftGame1024(gameMap);
+	//StringPractice::Print1024Matrix(gameMap);
+
+	bool notGameOver = true;
+	int k = 0;
+	while (k != 48 && notGameOver)
+	{
+		k = getch();
+		k = getch();
+
+		switch (k)
+		{
+		case 72:
+			notGameOver = StringPractice::MoveUpGame1024(gameMap);
+			StringPractice::Print1024Matrix(gameMap);
+			break;
+		case 75:
+			notGameOver = StringPractice::MoveLeftGame1024(gameMap);
+			StringPractice::Print1024Matrix(gameMap);
+			break;
+		case 77:
+			notGameOver = StringPractice::MoveRightGame1024(gameMap);
+			StringPractice::Print1024Matrix(gameMap);
+			break;
+		case 80:		
+			notGameOver = StringPractice::MoveDownGame1024(gameMap);
+			StringPractice::Print1024Matrix(gameMap);
+			break;		
+		}
+	}
+
+	std::cout << "Game Over" << std::endl;
 }
 
 

@@ -36,6 +36,9 @@
     <ClCompile Include="ListPractice.cpp">
       <Filter>structures\lists</Filter>
     </ClCompile>
+    <ClCompile Include="StringPractice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -55,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="ListPractice.h">
       <Filter>structures\lists</Filter>
+    </ClInclude>
+    <ClInclude Include="StringPractice.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -80,6 +80,7 @@
     <ClCompile Include="LinkList.cpp" />
     <ClCompile Include="ListPractice.cpp" />
     <ClCompile Include="main.cc" />
+    <ClCompile Include="StringPractice.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DoubleLinkList.h" />
@@ -88,6 +89,7 @@
     <ClInclude Include="ListPractice.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="StringPractice.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

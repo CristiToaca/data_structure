@@ -54,6 +54,17 @@ int& LinkList::TopBack(Node* root)
 	return node->data;
 }
 
+LinkList::Node* LinkList::TopNodeBack(Node* root)
+{
+	assert(root != nullptr);
+
+	Node* node = root;
+	while (node->next)
+		node = node->next;
+
+	return node;
+}
+
 void LinkList::PopBack(Node* root)
 {
 	assert(root != nullptr);

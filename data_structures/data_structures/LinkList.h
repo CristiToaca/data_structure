@@ -16,6 +16,7 @@ namespace data_structure
 		void PopFront(Node** root);
 		void PushBack(Node** root, int data);
 		int& TopBack(Node* root);
+		Node* TopNodeBack(Node* root);
 		void PopBack(Node* root);
 		bool Find(Node* root, const int& data);
 		void Erase(Node** root, const int& data);
